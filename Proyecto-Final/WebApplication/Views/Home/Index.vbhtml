@@ -5,8 +5,6 @@ End Code
 
 <!DOCTYPE html>
 
-<!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" http-equiv="content-type" content="width=device-width" charset="iso-8859-1" />
