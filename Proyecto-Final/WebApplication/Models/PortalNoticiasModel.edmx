@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PortalNoticiasBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="imagen" Type="image" />
+        </EntityType>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contenido" Type="varchar" MaxLength="200" />
+          <Property Name="fechaCreacion" Type="date" />
+          <Property Name="fkUsuario" Type="int" Nullable="false" />
+          <Property Name="fkDebate" Type="int" Nullable="false" />
+          <Property Name="fkNoticia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Debate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tema" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="fechaCreacion" Type="date" />
+        </EntityType>
+        <EntityType Name="Noticia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="titulo" Type="varchar" MaxLength="50" />
+          <Property Name="resumen" Type="varchar" MaxLength="50" />
+          <Property Name="detalle" Type="varchar" MaxLength="300" />
+          <Property Name="fechaCreacion" Type="date" />
+          <Property Name="fuente" Type="varchar" MaxLength="20" />
+          <Property Name="imagen" Type="image" />
+          <Property Name="fkPuntuacion" Type="int" Nullable="false" />
+          <Property Name="fkCategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Preferencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="fkUsuario" Type="int" Nullable="false" />
+          <Property Name="fkNoticia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puntuacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="puntuacion" Type="varchar" MaxLength="20" />
+          <Property Name="valoracion" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Sugerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contenido" Type="varchar" MaxLength="300" />
+          <Property Name="fechaCreacion" Type="date" />
+          <Property Name="fkUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom1" Type="varchar" MaxLength="20" />
+          <Property Name="nom2" Type="varchar" MaxLength="20" />
+          <Property Name="apePat" Type="varchar" MaxLength="20" />
+          <Property Name="apeMat" Type="varchar" MaxLength="20" />
+          <Property Name="user" Type="varchar" MaxLength="30" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="administrador" Type="bit" Nullable="false" />
+          <Property Name="fkDebate" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Noticia">
+              <PropertyRef Name="fkCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Debate">
+          <End Role="Debate" Type="Self.Debate" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Debate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fkDebate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Debate1">
+          <End Role="Debate" Type="Self.Debate" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Debate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkDebate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Noticia">
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Noticia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkNoticia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Noticia1">
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+          <End Role="Preferencia" Type="Self.Preferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Noticia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Preferencia">
+              <PropertyRef Name="fkNoticia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puntuacion">
+          <End Role="Puntuacion" Type="Self.Puntuacion" Multiplicity="1" />
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puntuacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Noticia">
+              <PropertyRef Name="fkPuntuacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Sugerencia" Type="Self.Sugerencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sugerencia">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario2">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Preferencia" Type="Self.Preferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Preferencia">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PortalNoticiasBDModelStoreContainer">
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comentario" EntityType="Self.Comentario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Debate" EntityType="Self.Debate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Noticia" EntityType="Self.Noticia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preferencia" EntityType="Self.Preferencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puntuacion" EntityType="Self.Puntuacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sugerencia" EntityType="Self.Sugerencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Noticia" EntitySet="Noticia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Debate" Association="Self.FK_Debate">
+            <End Role="Debate" EntitySet="Debate" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Debate1" Association="Self.FK_Debate1">
+            <End Role="Debate" EntitySet="Debate" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Noticia" Association="Self.FK_Noticia">
+            <End Role="Noticia" EntitySet="Noticia" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Noticia1" Association="Self.FK_Noticia1">
+            <End Role="Noticia" EntitySet="Noticia" />
+            <End Role="Preferencia" EntitySet="Preferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puntuacion" Association="Self.FK_Puntuacion">
+            <End Role="Puntuacion" EntitySet="Puntuacion" />
+            <End Role="Noticia" EntitySet="Noticia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario" Association="Self.FK_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Sugerencia" EntitySet="Sugerencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario1" Association="Self.FK_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario2" Association="Self.FK_Usuario2">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Preferencia" EntitySet="Preferencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PortalNoticiasBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Noticia" Relationship="Self.FK_Categoria" FromRole="Categoria" ToRole="Noticia" />
+        </EntityType>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contenido" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="fkUsuario" Type="Int32" Nullable="false" />
+          <Property Name="fkDebate" Type="Int32" Nullable="false" />
+          <Property Name="fkNoticia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Debate" Relationship="Self.FK_Debate1" FromRole="Comentario" ToRole="Debate" />
+          <NavigationProperty Name="Noticia" Relationship="Self.FK_Noticia" FromRole="Comentario" ToRole="Noticia" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario1" FromRole="Comentario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Debate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tema" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Comentario" Relationship="Self.FK_Debate1" FromRole="Debate" ToRole="Comentario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Debate" FromRole="Debate" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Noticia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="resumen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="detalle" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="fuente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="fkPuntuacion" Type="Int32" Nullable="false" />
+          <Property Name="fkCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK_Categoria" FromRole="Noticia" ToRole="Categoria" />
+          <NavigationProperty Name="Comentario" Relationship="Self.FK_Noticia" FromRole="Noticia" ToRole="Comentario" />
+          <NavigationProperty Name="Preferencia" Relationship="Self.FK_Noticia1" FromRole="Noticia" ToRole="Preferencia" />
+          <NavigationProperty Name="Puntuacion" Relationship="Self.FK_Puntuacion" FromRole="Noticia" ToRole="Puntuacion" />
+        </EntityType>
+        <EntityType Name="Preferencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="fkUsuario" Type="Int32" Nullable="false" />
+          <Property Name="fkNoticia" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Noticia" Relationship="Self.FK_Noticia1" FromRole="Preferencia" ToRole="Noticia" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario2" FromRole="Preferencia" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Puntuacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="puntuacion1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="valoracion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Noticia" Relationship="Self.FK_Puntuacion" FromRole="Puntuacion" ToRole="Noticia" />
+        </EntityType>
+        <EntityType Name="Sugerencia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contenido" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="fkUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario" FromRole="Sugerencia" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nom2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apePat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apeMat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="user" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="administrador" Type="Boolean" Nullable="false" />
+          <Property Name="fkDebate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Comentario" Relationship="Self.FK_Usuario1" FromRole="Usuario" ToRole="Comentario" />
+          <NavigationProperty Name="Debate" Relationship="Self.FK_Debate" FromRole="Usuario" ToRole="Debate" />
+          <NavigationProperty Name="Preferencia" Relationship="Self.FK_Usuario2" FromRole="Usuario" ToRole="Preferencia" />
+          <NavigationProperty Name="Sugerencia" Relationship="Self.FK_Usuario" FromRole="Usuario" ToRole="Sugerencia" />
+        </EntityType>
+        <Association Name="FK_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Noticia">
+              <PropertyRef Name="fkCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Debate1">
+          <End Role="Debate" Type="Self.Debate" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Debate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkDebate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Noticia">
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Noticia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkNoticia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comentario">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Debate">
+          <End Role="Debate" Type="Self.Debate" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Debate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="fkDebate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Noticia1">
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="1" />
+          <End Role="Preferencia" Type="Self.Preferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Noticia">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Preferencia">
+              <PropertyRef Name="fkNoticia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puntuacion">
+          <End Role="Puntuacion" Type="Self.Puntuacion" Multiplicity="1" />
+          <End Role="Noticia" Type="Self.Noticia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puntuacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Noticia">
+              <PropertyRef Name="fkPuntuacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario2">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Preferencia" Type="Self.Preferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Preferencia">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Sugerencia" Type="Self.Sugerencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sugerencia">
+              <PropertyRef Name="fkUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PortalNoticiasBDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+          <EntitySet Name="Comentario" EntityType="Self.Comentario" />
+          <EntitySet Name="Debate" EntityType="Self.Debate" />
+          <EntitySet Name="Noticia" EntityType="Self.Noticia" />
+          <EntitySet Name="Preferencia" EntityType="Self.Preferencia" />
+          <EntitySet Name="Puntuacion" EntityType="Self.Puntuacion" />
+          <EntitySet Name="Sugerencia" EntityType="Self.Sugerencia" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Noticia" EntitySet="Noticia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Debate1" Association="Self.FK_Debate1">
+            <End Role="Debate" EntitySet="Debate" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Noticia" Association="Self.FK_Noticia">
+            <End Role="Noticia" EntitySet="Noticia" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario1" Association="Self.FK_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Comentario" EntitySet="Comentario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Debate" Association="Self.FK_Debate">
+            <End Role="Debate" EntitySet="Debate" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Noticia1" Association="Self.FK_Noticia1">
+            <End Role="Noticia" EntitySet="Noticia" />
+            <End Role="Preferencia" EntitySet="Preferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puntuacion" Association="Self.FK_Puntuacion">
+            <End Role="Puntuacion" EntitySet="Puntuacion" />
+            <End Role="Noticia" EntitySet="Noticia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario2" Association="Self.FK_Usuario2">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Preferencia" EntitySet="Preferencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario" Association="Self.FK_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Sugerencia" EntitySet="Sugerencia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PortalNoticiasBDModelStoreContainer" CdmEntityContainer="PortalNoticiasBDEntities">
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comentario">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Comentario">
+              <MappingFragment StoreEntitySet="Comentario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="contenido" ColumnName="contenido" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+                <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
+                <ScalarProperty Name="fkNoticia" ColumnName="fkNoticia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Debate">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Debate">
+              <MappingFragment StoreEntitySet="Debate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tema" ColumnName="tema" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Noticia">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Noticia">
+              <MappingFragment StoreEntitySet="Noticia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="resumen" ColumnName="resumen" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fuente" ColumnName="fuente" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="fkPuntuacion" ColumnName="fkPuntuacion" />
+                <ScalarProperty Name="fkCategoria" ColumnName="fkCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preferencia">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Preferencia">
+              <MappingFragment StoreEntitySet="Preferencia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+                <ScalarProperty Name="fkNoticia" ColumnName="fkNoticia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puntuacion">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Puntuacion">
+              <MappingFragment StoreEntitySet="Puntuacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="puntuacion1" ColumnName="puntuacion" />
+                <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sugerencia">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Sugerencia">
+              <MappingFragment StoreEntitySet="Sugerencia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="contenido" ColumnName="contenido" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="PortalNoticiasBDModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nom1" ColumnName="nom1" />
+                <ScalarProperty Name="nom2" ColumnName="nom2" />
+                <ScalarProperty Name="apePat" ColumnName="apePat" />
+                <ScalarProperty Name="apeMat" ColumnName="apeMat" />
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="administrador" ColumnName="administrador" />
+                <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
