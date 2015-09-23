@@ -26,3 +26,31 @@ C:\Users\JORGE FALCONI\Docs FIA\Desarrollo de Aplicaciones II\Proyecto\Desarroll
 C:\Users\JORGE FALCONI\Docs FIA\Desarrollo de Aplicaciones II\Proyecto\Desarrollo-de-Aplicaciones-II-Proyecto-Final-master\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.dll
 C:\Users\JORGE FALCONI\Docs FIA\Desarrollo de Aplicaciones II\Proyecto\Desarrollo-de-Aplicaciones-II-Proyecto-Final-master\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.xml
 C:\Users\JORGE FALCONI\Docs FIA\Desarrollo de Aplicaciones II\Proyecto\Desarrollo-de-Aplicaciones-II-Proyecto-Final-master\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.pdb
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\WebApplication1.dll.config
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\WebApplication1.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\WebApplication1.pdb
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\WebApplication1.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Helpers.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Mvc.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Razor.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Deployment.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Razor.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Razor.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Deployment.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Razor.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Helpers.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\System.Web.Mvc.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Razor.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Helpers.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\es\System.Web.Mvc.resources.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\ProyectoFinal.vbprojResolveAssemblyReference.cache
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.Resources.resources
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\ProyectoFinal.vbproj.GenerateResource.Cache
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.dll
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.xml
+C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.pdb
