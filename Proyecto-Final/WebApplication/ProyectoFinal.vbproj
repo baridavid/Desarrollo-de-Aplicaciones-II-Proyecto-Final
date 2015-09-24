@@ -40,11 +40,19 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web.DynamicData" />
@@ -101,10 +109,31 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PortalNoticiasBD.mdf" />
+    <Content Include="App_Data\PortalNoticiasBD_log.ldf">
+      <DependentUpon>PortalNoticiasBD.mdf</DependentUpon>
+    </Content>
     <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="images\Gordon_Brown.jpg" />
     <Content Include="images\Liverpool_Champions_League.jpg" />
+    <EntityDeploy Include="Models\PortalNoticiasModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PortalNoticiasModel.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\PortalNoticiasModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
+      <LastGenOutput>PortalNoticiasModel.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\PortalNoticiasModel.edmx.diagram">
+      <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\PortalNoticiasModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
+      <LastGenOutput>PortalNoticiasModel.vb</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -120,6 +149,45 @@
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categoria.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Comentario.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Debate.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Noticia.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortalNoticiasModel.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalNoticiasModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortalNoticiasModel.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PortalNoticiasModel.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Preferencia.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Puntuacion.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sugerencia.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.vb">
+      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -173,9 +241,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

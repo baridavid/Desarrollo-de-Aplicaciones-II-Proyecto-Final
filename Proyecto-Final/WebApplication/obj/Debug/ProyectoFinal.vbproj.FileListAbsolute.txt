@@ -54,3 +54,31 @@ C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Pro
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.dll
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.xml
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.pdb
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\WebApplication1.dll.config
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\WebApplication1.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\WebApplication1.pdb
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\WebApplication1.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Helpers.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Mvc.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Razor.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Deployment.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Razor.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Razor.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Deployment.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Webpages.Razor.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Helpers.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\System.Web.Mvc.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Razor.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Helpers.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\es\System.Web.Mvc.resources.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\ProyectoFinal.vbprojResolveAssemblyReference.cache
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.Resources.resources
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\ProyectoFinal.vbproj.GenerateResource.Cache
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\obj\Debug\WebApplication1.pdb
