@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\CategoriaController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -234,6 +235,10 @@
     <Content Include="Views\Shared\Principal.vbhtml" />
     <Content Include="Views\Shared\Footer.vbhtml" />
     <Content Include="Views\Shared\Header.vbhtml" />
+    <Content Include="Views\Categoria\Lista.vbhtml" />
+    <Content Include="Views\Categoria\Create.vbhtml" />
+    <Content Include="Views\Categoria\Edit.vbhtml" />
+    <Content Include="Views\Categoria\Details.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

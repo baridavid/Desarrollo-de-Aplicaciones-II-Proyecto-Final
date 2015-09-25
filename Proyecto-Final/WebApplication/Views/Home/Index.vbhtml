@@ -36,10 +36,7 @@ End Code
         </div>
         <div class="row3r">
             <div class="row3rl"><h2>Travel</h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat. <a href="#">more &raquo;</a></div>
-            <div class="row3rr">
-                <h2>Information</h2>
-                This is my 2nd free template release. <strong>I hope you enjoy it!</strong><br />It is a very simple design and should be very easy to customise.<br />In the future i would like to release a more feature packed version.<br />Please leave any comments about this template <a href="http://www.mad-designs.org/free-website-template-daily-newspaper/">here &raquo;</a>
-            </div>
+            <div class="row3rr"><h2>Information</h2>This is my 2nd free template release. <strong>I hope you enjoy it!</strong><br />It is a very simple design and should be very easy to customise.<br />In the future i would like to release a more feature packed version.<br />Please leave any comments about this template <a href="http://www.mad-designs.org/free-website-template-daily-newspaper/">here &raquo;</a></div>
         </div>
     </div>
     <br clear="all" />

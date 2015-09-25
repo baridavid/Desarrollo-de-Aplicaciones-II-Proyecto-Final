@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PortalNoticiasBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PortalNoticiasBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="Id" />
@@ -12,7 +12,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="descripcion" Type="varchar" MaxLength="100" />
-          <Property Name="imagen" Type="image" />
         </EntityType>
         <EntityType Name="Comentario">
           <Key>
@@ -245,8 +244,7 @@
             <End Role="Preferencia" EntitySet="Preferencia" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PortalNoticiasBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -257,7 +255,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Noticia" Relationship="Self.FK_Categoria" FromRole="Categoria" ToRole="Noticia" />
         </EntityType>
         <EntityType Name="Comentario">
@@ -520,7 +517,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

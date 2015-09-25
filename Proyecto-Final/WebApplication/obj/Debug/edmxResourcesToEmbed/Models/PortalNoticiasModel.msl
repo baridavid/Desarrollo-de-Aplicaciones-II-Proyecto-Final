@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalNoticiasBDModelStoreContainer" CdmEntityContainer="PortalNoticiasBDEntities">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentario">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Comentario">
+        <MappingFragment StoreEntitySet="Comentario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+          <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
+          <ScalarProperty Name="fkNoticia" ColumnName="fkNoticia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Debate">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Debate">
+        <MappingFragment StoreEntitySet="Debate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tema" ColumnName="tema" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Noticia">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Noticia">
+        <MappingFragment StoreEntitySet="Noticia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="resumen" ColumnName="resumen" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fuente" ColumnName="fuente" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="fkPuntuacion" ColumnName="fkPuntuacion" />
+          <ScalarProperty Name="fkCategoria" ColumnName="fkCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preferencia">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Preferencia">
+        <MappingFragment StoreEntitySet="Preferencia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+          <ScalarProperty Name="fkNoticia" ColumnName="fkNoticia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puntuacion">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Puntuacion">
+        <MappingFragment StoreEntitySet="Puntuacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="puntuacion1" ColumnName="puntuacion" />
+          <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sugerencia">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Sugerencia">
+        <MappingFragment StoreEntitySet="Sugerencia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nom1" ColumnName="nom1" />
+          <ScalarProperty Name="nom2" ColumnName="nom2" />
+          <ScalarProperty Name="apePat" ColumnName="apePat" />
+          <ScalarProperty Name="apeMat" ColumnName="apeMat" />
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="administrador" ColumnName="administrador" />
+          <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
