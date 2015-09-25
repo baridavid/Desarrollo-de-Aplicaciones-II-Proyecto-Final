@@ -9,7 +9,7 @@ Public Class CategoriaController
     End Function
 
     Function Lista() As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         Dim categoriasListado As List(Of Categoria) = modelCategorias.Categoria.ToList
         Return View(categoriasListado)
     End Function
@@ -21,7 +21,7 @@ Public Class CategoriaController
 
     <HttpPost()>
     Function Create(objCategoria As Categoria) As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         modelCategorias.Categoria.Add(objCategoria)
         modelCategorias.SaveChanges()
         Return RedirectToAction("Lista")
@@ -29,27 +29,27 @@ Public Class CategoriaController
 
     <HttpGet()>
     Function Edit(id As Integer) As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         Dim categoria As Categoria = modelCategorias.Categoria.Find(id)
         Return View(categoria)
     End Function
 
     <HttpPost()>
     Function Edit(objCategoria As Categoria) As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         modelCategorias.Entry(objCategoria).State = Entity.EntityState.Modified
         modelCategorias.SaveChanges()
         Return RedirectToAction("Lista")
     End Function
 
     Function Details(id As Integer) As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         Dim categoria As Categoria = modelCategorias.Categoria.Find(id)
         Return View(categoria)
     End Function
 
     Function Delete(id As Integer) As ActionResult
-        Dim modelCategorias As New PortalNoticiasBDEntities
+        Dim modelCategorias As New PortalNoticias_BDEntities
         Dim categoria As Categoria = modelCategorias.Categoria.Find(id)
         modelCategorias.Categoria.Remove(categoria)
         modelCategorias.SaveChanges()

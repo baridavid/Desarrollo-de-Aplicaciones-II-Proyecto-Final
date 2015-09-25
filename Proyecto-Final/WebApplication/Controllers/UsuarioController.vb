@@ -9,7 +9,7 @@ Public Class UsuarioController
     End Function
 
     Function Lista() As ActionResult
-        Dim modelUsuario As New PortalNoticiasBDEntities
+        Dim modelUsuario As New PortalNoticias_BDEntities
         Dim usuarioListado As List(Of Usuario) = modelUsuario.Usuario.ToList
         Return View(usuarioListado)
     End Function
@@ -26,14 +26,11 @@ Public Class UsuarioController
 
     ' POST: /Usuario/Create
     <HttpPost()>
-    Function Create(ByVal collection As FormCollection) As ActionResult
-        Try
-            ' TODO: Add insert logic here
-
-            Return RedirectToAction("Index")
-        Catch
-            Return View()
-        End Try
+    Function Create(objUsuario As Usuario) As ActionResult
+        Dim modelUsuarios As New PortalNoticias_BDEntities
+        modelUsuarios.Usuario.Add(objUsuario)
+        modelUsuarios.SaveChanges()
+        Return RedirectToAction("Lista")
     End Function
 
     ' GET: /Usuario/Edit/5
