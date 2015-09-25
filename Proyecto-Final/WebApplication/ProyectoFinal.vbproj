@@ -113,6 +113,7 @@
     <Content Include="App_Data\PortalNoticiasBD_log.ldf">
       <DependentUpon>PortalNoticiasBD.mdf</DependentUpon>
     </Content>
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="images\Gordon_Brown.jpg" />
@@ -121,6 +122,15 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PortalNoticiasModel.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <Content Include="images\paneh.gif" />
+    <Content Include="images\panehc.gif" />
+    <Content Include="images\panev.gif" />
+    <Content Include="images\panevc.gif" />
+    <Content Include="js\angular.min.js" />
+    <Content Include="js\jquery-1.4.3.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\splitter.js" />
+    <Content Include="Lista.html" />
     <Content Include="Models\PortalNoticiasModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
@@ -147,7 +157,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="Controllers\CategoriaController.vb" />
+    <Compile Include="Controllers\DeportesController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Controllers\InternacionalesController.vb" />
+    <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +252,12 @@
     <Content Include="Views\Categoria\Create.vbhtml" />
     <Content Include="Views\Categoria\Edit.vbhtml" />
     <Content Include="Views\Categoria\Details.vbhtml" />
+    <Content Include="Views\Deportes\Index.vbhtml" />
+    <Content Include="Views\Internacionales\Index.vbhtml" />
+    <Content Include="Views\Shared\PrincipalAdmin.vbhtml" />
+    <Content Include="Views\Shared\AsideAdmin.vbhtml" />
+    <Content Include="Views\Shared\HeaderAdmin.vbhtml" />
+    <Content Include="Views\Usuario\Lista.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
