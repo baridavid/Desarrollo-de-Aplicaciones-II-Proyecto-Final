@@ -86,3 +86,7 @@ C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Pro
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\EntityFramework.SqlServer.dll
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\EntityFramework.xml
 C:\Users\diego.lopez\Diego\USMP\Desarrollo de Aplicaciones II\Proyecto\trunk\Proyecto-Final\WebApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\EntityFramework.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\EntityFramework.xml
+C:\Users\JORGE FALCONI\Documents\GitHub\Desarrollo-de-Aplicaciones-II-Proyecto-Final\Proyecto-Final\WebApplication\bin\EntityFramework.SqlServer.xml
