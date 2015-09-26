@@ -258,6 +258,7 @@
     <Content Include="Views\Shared\AsideAdmin.vbhtml" />
     <Content Include="Views\Shared\HeaderAdmin.vbhtml" />
     <Content Include="Views\Usuario\Lista.vbhtml" />
+    <Content Include="Views\Home\Login.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -50,6 +50,7 @@
                 <!--li><a href="#">Deportes</a></li-->
                 <li><a href="#">Negocios</a></li>
                 <li><a href="#" id="myBtn">Iniciar Sesión</a></li>
+                <li>@Html.ActionLink("Log In", "Login", "Home")</li>
             </ul>
         </div>
     </div>
