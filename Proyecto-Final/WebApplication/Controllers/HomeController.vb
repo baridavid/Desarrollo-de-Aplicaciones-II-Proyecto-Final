@@ -1,4 +1,5 @@
 ﻿Imports System.Web.Mvc
+Imports System.Web.Security
 
 Public Class HomeController
     Inherits Controller
@@ -15,12 +16,17 @@ Public Class HomeController
 
     <HttpPost()>
     Function Login(objUsuario As Usuario) As ActionResult
-        If IsValid(objUsuario.user, objUsuario.password) Then
+        If ModelState.IsValid Then
+            If IsValid(objUsuario.user, objUsuario.password) Then
 
-            FormsAuthentication.SetAuthCookie(objUsuario.user, False)
-            Return Redirect("Index")
+                FormsAuthentication.SetAuthCookie(objUsuario.user, False)
+                Return Redirect("Index")
+            Else
+                ModelState.AddModelError("", "Error ,volver a ingresar los datos")
+            End If
+
         End If
-        ModelState.AddModelError("", "Error ,volver a ingresar los datos")
+
         Return View(objUsuario)
     End Function
     Function IsValid(usr As String, pass As String) As Boolean

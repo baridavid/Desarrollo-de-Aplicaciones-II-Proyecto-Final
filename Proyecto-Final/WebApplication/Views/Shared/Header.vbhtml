@@ -18,7 +18,7 @@
                         <input type="text" class="form-control" id="psw" placeholder="Ingrese su contraseña" />
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="" checked=checked />Recordar contraseña</label>
+                        <label><input type="checkbox" value="" checked />Recordar contraseña</label>
                     </div>
                     <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> INGRESAR</button>
                 </form>
@@ -38,6 +38,8 @@
         });
     });
 </script>
+
+    
 <div class="container">
     <div class="header">
         <div class="topl"><h1><em>Entér@te</em></h1></div>
@@ -50,9 +52,14 @@
                 <!--li><a href="#">Deportes</a></li-->
                 <li><a href="#">Negocios</a></li>
                 <li><a href="#" id="myBtn">Iniciar Sesión</a></li>
-                <li>@Html.ActionLink("Log In", "Login", "Home")</li>
+                @If (Request.IsAuthenticated) Then
+                    @<li>@Html.Encode(User.Identity.Name)</li>
+                    @<li>@Html.ActionLink("Log Out", "LogOut", "Home")</li>
+                Else
+                   @<li>@Html.ActionLink("Log In", "Login", "Home")</li>
+                End If 
             </ul>
         </div>
     </div>
 </div>
-</html>
+
