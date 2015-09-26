@@ -41,11 +41,17 @@ End Code
             background: #c4dcfb;
             overflow: auto;
         }
+        #rightPane {
+            float: left;
+            width: 85%;
+            height: 100%;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body ng-app="myApp" ng-controller="userCtrl">
     @Html.Partial("~/Views/Shared/HeaderAdmin.vbhtml")
     @Html.Partial("~/Views/Shared/AsideAdmin.vbhtml")
-    @RenderBody()
+    <div id="rightPane">@RenderBody()</div>  
 </body>
 </html>
