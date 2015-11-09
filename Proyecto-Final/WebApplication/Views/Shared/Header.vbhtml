@@ -41,25 +41,48 @@
 
     
 <div class="container">
-    <div class="header">
-        <div class="topl"><h1><em>Entér@te</em></h1></div>
-        <div class="topr">
-            <ul>
-                <li><a href="#">Nacionales</a></li>
-                <!--li><a href="#">Internacionales</a><li-->
-                <li>@Html.ActionLink("Internacionales", "Index", "Internacionales")</li>
-                <li>@Html.ActionLink("Deportes", "Index", "Deportes")</li>
-                <!--li><a href="#">Deportes</a></li-->
-                <li><a href="#">Negocios</a></li>
-                <li><a href="#" id="myBtn">Iniciar Sesión</a></li>
-                @If (Request.IsAuthenticated) Then
-                    @<li>@Html.Encode(User.Identity.Name)</li>
-                    @<li>@Html.ActionLink("Log Out", "LogOut", "Home")</li>
-                Else
-                   @<li>@Html.ActionLink("Log In", "Login", "Home")</li>
-                End If 
-            </ul>
-        </div>
-    </div>
-</div>
 
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Enter@te</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Nacionales</a></li>
+                        <li>@Html.ActionLink("Internacionales", "Index", "Internacionales")</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deportes <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Locales</a></li>
+                                <li><a href="#">Internacionales</a></li>
+                                <li><a href="#">Por Deporte</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Popular</li>
+                                <li><a href="#">Juve</a></li>
+                                <li><a href="#">Barcelona</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="./">Negocios <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#" id="myBtn">Iniciar Sescion</a></li>
+                        <li><a href="../navbar-fixed-top/">Log in</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+
+
+        
+    </div>
+ </div> <!-- /container -->
