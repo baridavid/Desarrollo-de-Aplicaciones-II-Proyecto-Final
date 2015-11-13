@@ -59,24 +59,12 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../Home/Index">Inicio</a></li>
-                        <li><a href="#">Nacionales</a></li>
-                        <li>@Html.ActionLink("Internacionales", "Index", "Internacionales")</li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Deportes <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Locales</a></li>
-                                <li><a href="#">Internacionales</a></li>
-                                <li><a href="#">Por Deporte</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Popular</li>
-                                <li><a href="#">Juve</a></li>
-                                <li><a href="#">Barcelona</a></li>
-                            </ul>
-                        </li>
+                      @For Each Categoria In ViewData("categorias")
+                        @<li class="active"><a href="../Home/Index">@Categoria.nombre</a></li>
+                        Next
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="./">Negocios <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#" id="myBtn">Iniciar Sescion</a></li>
+                        <li><a href="#" id="myBtn">Iniciar Sesion</a></li>
                         <li><a href="../navbar-fixed-top/">Log in</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->

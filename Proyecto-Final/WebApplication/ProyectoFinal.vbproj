@@ -118,10 +118,6 @@
     <Content Include="Global.asax" />
     <Content Include="images\Gordon_Brown.jpg" />
     <Content Include="images\Liverpool_Champions_League.jpg" />
-    <EntityDeploy Include="Models\PortalNoticiasModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PortalNoticiasModel.Designer.vb</LastGenOutput>
-    </EntityDeploy>
     <Content Include="images\paneh.gif" />
     <Content Include="images\panehc.gif" />
     <Content Include="images\panev.gif" />
@@ -131,6 +127,10 @@
     <Content Include="js\jquery.min.js" />
     <Content Include="js\splitter.js" />
     <Content Include="Lista.html" />
+    <EntityDeploy Include="Models\PortalNoticiasModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PortalNoticiasModel.Designer.vb</LastGenOutput>
+    </EntityDeploy>
     <Content Include="Models\PortalNoticiasModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PortalNoticiasModel.edmx</DependentUpon>
@@ -156,10 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
-    <Compile Include="Controllers\CategoriaController.vb" />
-    <Compile Include="Controllers\DeportesController.vb" />
+    <Compile Include="Controllers\CategoriasController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
-    <Compile Include="Controllers\InternacionalesController.vb" />
+    <Compile Include="Controllers\NoticiaController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -168,9 +167,6 @@
       <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Comentario.vb">
-      <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Debate.vb">
       <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Noticia.vb">
@@ -197,6 +193,8 @@
     <Compile Include="Models\Puntuacion.vb">
       <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Repositorio\IRepositorioGenerico.vb" />
+    <Compile Include="Models\Repositorio\RepositorioGenerico.vb" />
     <Compile Include="Models\Sugerencia.vb">
       <DependentUpon>PortalNoticiasModel.tt</DependentUpon>
     </Compile>
@@ -248,17 +246,21 @@
     <Content Include="Views\Shared\Principal.vbhtml" />
     <Content Include="Views\Shared\Footer.vbhtml" />
     <Content Include="Views\Shared\Header.vbhtml" />
-    <Content Include="Views\Categoria\Lista.vbhtml" />
-    <Content Include="Views\Categoria\Create.vbhtml" />
-    <Content Include="Views\Categoria\Edit.vbhtml" />
-    <Content Include="Views\Categoria\Details.vbhtml" />
-    <Content Include="Views\Deportes\Index.vbhtml" />
-    <Content Include="Views\Internacionales\Index.vbhtml" />
     <Content Include="Views\Shared\PrincipalAdmin.vbhtml" />
     <Content Include="Views\Shared\AsideAdmin.vbhtml" />
     <Content Include="Views\Shared\HeaderAdmin.vbhtml" />
     <Content Include="Views\Usuario\Lista.vbhtml" />
     <Content Include="Views\Home\Login.vbhtml" />
+    <Content Include="Views\Noticia\Create.vbhtml" />
+    <Content Include="Views\Noticia\Delete.vbhtml" />
+    <Content Include="Views\Noticia\Details.vbhtml" />
+    <Content Include="Views\Noticia\Edit.vbhtml" />
+    <Content Include="Views\Noticia\Index.vbhtml" />
+    <Content Include="Views\Categorias\Create.vbhtml" />
+    <Content Include="Views\Categorias\Delete.vbhtml" />
+    <Content Include="Views\Categorias\Details.vbhtml" />
+    <Content Include="Views\Categorias\Edit.vbhtml" />
+    <Content Include="Views\Categorias\Index.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

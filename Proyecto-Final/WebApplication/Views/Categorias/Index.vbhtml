@@ -1,13 +1,13 @@
 ﻿@ModelType IEnumerable(Of Categoria)
 @Code
-ViewData("Title") = "Lista"
-Layout = "~/Views/Shared/Principal.vbhtml"
+ViewData("Title") = "Index"
+Layout = "~/Views/Shared/PrincipalAdmin.vbhtml"
 End Code
 
-<h2>Lista de Categorias</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Crear nueva categoria", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,6 +16,9 @@ End Code
         </th>
         <th>
             @Html.DisplayNameFor(Function(model) model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Function(model) model.imagen)
         </th>
         <th></th>
     </tr>
@@ -29,9 +32,12 @@ End Code
             @Html.DisplayFor(Function(modelItem) item.descripcion)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", New With {.id = item.Id}) |
-            @Html.ActionLink("Detalles", "Details", New With {.id = item.Id}) |
-            @Html.ActionLink("Eliminar", "Delete", New With {.id = item.Id })
+            @Html.DisplayFor(Function(modelItem) item.imagen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", New With {.id = item.Id }) |
+            @Html.ActionLink("Details", "Details", New With {.id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", New With {.id = item.Id })
         </td>
     </tr>
 Next

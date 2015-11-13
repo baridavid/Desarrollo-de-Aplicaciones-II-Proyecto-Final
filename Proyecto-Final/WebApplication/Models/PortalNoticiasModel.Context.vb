@@ -11,11 +11,11 @@ Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 
-Partial Public Class PortalNoticias_BDEntities
+Partial Public Class PortalNoticiasBDEntities
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=PortalNoticias_BDEntities")
+        MyBase.New("name=PortalNoticiasBDEntities")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)

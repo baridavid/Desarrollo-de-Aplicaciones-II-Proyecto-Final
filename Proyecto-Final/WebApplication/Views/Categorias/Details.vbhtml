@@ -1,7 +1,7 @@
 ﻿@ModelType Categoria
 @Code
     ViewData("Title") = "Details"
-    Layout = "~/Views/Shared/Principal.vbhtml"
+    Layout = "~/Views/Shared/PrincipalAdmin.vbhtml"
 End Code
 
 <h2>Details</h2>
@@ -26,9 +26,17 @@ End Code
             @Html.DisplayFor(Function(model) model.descripcion)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(Function(model) model.imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Function(model) model.imagen)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", New With {.id = Model.Id}) |
-    @Html.ActionLink("Regresar", "Lista")
+    @Html.ActionLink("Edit", "Edit", New With { .id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

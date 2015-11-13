@@ -14,7 +14,6 @@ Partial Public Class Categoria
     Public Property Id As Integer
     Public Property nombre As String
     Public Property descripcion As String
-    Public Property imagen As Byte()
 
     Public Overridable Property Noticia As ICollection(Of Noticia) = New HashSet(Of Noticia)
 

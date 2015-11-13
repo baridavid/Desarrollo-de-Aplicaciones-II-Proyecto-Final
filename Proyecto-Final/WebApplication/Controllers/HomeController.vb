@@ -4,8 +4,12 @@ Imports System.Web.Security
 Public Class HomeController
     Inherits Controller
 
+    Private db As New PortalNoticiasBDEntities
+
     ' GET: /Home
     Function Index() As ActionResult
+        Dim categorias = db.Categoria.ToList
+        ViewData("categorias") = categorias
         Return View()
     End Function
     <HttpGet()>
@@ -20,7 +24,7 @@ Public Class HomeController
             If IsValid(objUsuario.user, objUsuario.password) Then
 
                 FormsAuthentication.SetAuthCookie(objUsuario.user, False)
-                Return Redirect("Index")
+                Return Redirect("~/Usuario/Lista")
             Else
                 ModelState.AddModelError("", "Error ,volver a ingresar los datos")
             End If
@@ -31,7 +35,7 @@ Public Class HomeController
     End Function
     Function IsValid(usr As String, pass As String) As Boolean
         Dim IsVl As Boolean
-        Dim modelUsuarios As New PortalNoticias_BDEntities
+        Dim modelUsuarios As New PortalNoticiasBDEntities
         IsVl = False
         Using (modelUsuarios)
             Dim user = modelUsuarios.Usuario.FirstOrDefault(Function(Model) Model.user = usr)

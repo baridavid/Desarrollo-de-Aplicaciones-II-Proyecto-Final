@@ -17,18 +17,7 @@
           <ScalarProperty Name="contenido" ColumnName="contenido" />
           <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="fkUsuario" ColumnName="fkUsuario" />
-          <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
           <ScalarProperty Name="fkNoticia" ColumnName="fkNoticia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Debate">
-      <EntityTypeMapping TypeName="PortalNoticiasBDModel.Debate">
-        <MappingFragment StoreEntitySet="Debate">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="tema" ColumnName="tema" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -90,7 +79,6 @@
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="correo" ColumnName="correo" />
           <ScalarProperty Name="administrador" ColumnName="administrador" />
-          <ScalarProperty Name="fkDebate" ColumnName="fkDebate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

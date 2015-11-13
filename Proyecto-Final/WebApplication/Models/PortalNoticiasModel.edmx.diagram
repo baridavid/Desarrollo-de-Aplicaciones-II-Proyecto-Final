@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e1147039028549b981da7ff19e7a6cdd" Name="Diagram1">
-        <EntityTypeShape EntityType="PortalNoticiasBDModel.Categoria" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="072f52c7e2c44a2f9beb5e5591b47a16" Name="Diagram1">
+        <EntityTypeShape EntityType="PortalNoticiasBDModel.Categoria" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalNoticiasBDModel.Comentario" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalNoticiasBDModel.Noticia" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalNoticiasBDModel.Preferencia" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />

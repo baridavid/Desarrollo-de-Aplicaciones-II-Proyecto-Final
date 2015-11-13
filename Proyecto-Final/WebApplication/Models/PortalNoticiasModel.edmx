@@ -12,7 +12,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="descripcion" Type="varchar" MaxLength="100" />
-          <Property Name="imagen" Type="image" />
         </EntityType>
         <EntityType Name="Comentario">
           <Key>
@@ -213,7 +212,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Noticia" Relationship="Self.FK_Categoria" FromRole="Categoria" ToRole="Noticia" />
         </EntityType>
         <EntityType Name="Comentario">
@@ -379,7 +377,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PortalNoticias_BDEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PortalNoticiasBDEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Comentario" EntityType="Self.Comentario" />
           <EntitySet Name="Noticia" EntityType="Self.Noticia" />
@@ -421,14 +419,13 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PortalNoticiasBDModelStoreContainer" CdmEntityContainer="PortalNoticias_BDEntities">
+        <EntityContainerMapping StorageEntityContainer="PortalNoticiasBDModelStoreContainer" CdmEntityContainer="PortalNoticiasBDEntities">
           <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="PortalNoticiasBDModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
