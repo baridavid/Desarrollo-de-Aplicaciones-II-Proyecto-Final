@@ -12,6 +12,9 @@ Public Class HomeController
         ViewData("categorias") = categorias
         Return View()
     End Function
+    Function LinkRegistrar() As ActionResult
+        Return Redirect("~/Usuario/Create")
+    End Function
     <HttpGet()>
     Function Login() As ActionResult
 

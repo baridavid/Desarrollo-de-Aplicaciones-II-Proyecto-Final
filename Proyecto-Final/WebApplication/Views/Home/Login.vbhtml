@@ -1,8 +1,8 @@
 ﻿@ModelType Usuario
-@Code
+@*@Code
     ViewData("Title") = "Login"
     Layout = "~/Views/Shared/Principal.vbhtml"
-End Code
+End Code*@
 
 <h2>Login</h2>
 @Using (Html.BeginForm())

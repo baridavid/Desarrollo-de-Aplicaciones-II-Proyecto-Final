@@ -17,9 +17,7 @@ End Code
         <th>
             @Html.DisplayNameFor(Function(model) model.descripcion)
         </th>
-        <th>
-            @Html.DisplayNameFor(Function(model) model.imagen)
-        </th>
+    
         <th></th>
     </tr>
 
@@ -31,9 +29,7 @@ End Code
         <td>
             @Html.DisplayFor(Function(modelItem) item.descripcion)
         </td>
-        <td>
-            @Html.DisplayFor(Function(modelItem) item.imagen)
-        </td>
+       
         <td>
             @Html.ActionLink("Edit", "Edit", New With {.id = item.Id }) |
             @Html.ActionLink("Details", "Details", New With {.id = item.Id }) |

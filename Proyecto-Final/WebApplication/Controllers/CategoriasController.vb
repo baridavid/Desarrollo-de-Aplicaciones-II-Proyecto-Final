@@ -40,12 +40,12 @@ Namespace WebApplication1
         'más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         <ValidateAntiForgeryToken()>
-        Function Create(<Bind(Include := "Id,nombre,descripcion,imagen")> ByVal categoria As Categoria) As ActionResult
+        Function Create(<Bind(Include:="Id,nombre,descripcion")> ByVal categoria As Categoria) As ActionResult
             If ModelState.IsValid Then
                 db.Categoria.Add(categoria)
                 db.SaveChanges()
                 Return RedirectToAction("Index")
-            End If 
+            End If
             Return View(categoria)
         End Function
 

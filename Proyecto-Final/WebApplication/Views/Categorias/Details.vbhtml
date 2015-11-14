@@ -26,14 +26,6 @@ End Code
             @Html.DisplayFor(Function(model) model.descripcion)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(Function(model) model.imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(Function(model) model.imagen)
-        </dd>
-
     </dl>
 </div>
 <p>
