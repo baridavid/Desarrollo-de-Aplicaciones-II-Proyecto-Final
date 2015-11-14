@@ -64,8 +64,10 @@
                         Next
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" id="myBtn">Iniciar Sesion</a></li>
-                        <li><a href="../navbar-fixed-top/">Log in</a></li>
+                        @*<li><a href="#" id="myBtn">Iniciar Sesion</a></li>*@
+                        <li>@Html.ActionLink("Ingresar", "Login")</li>
+                        @*<li><a href="../navbar-fixed-top/">Log in</a></li>*@
+                        <li>@Html.ActionLink("Registrarse","LinkRegistrar")</li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
