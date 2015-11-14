@@ -11,7 +11,7 @@ Namespace WebApplication1
     Public Class AdminController
         Inherits System.Web.Mvc.Controller
 
-        Private db As New PortalNoticias_BDEntities
+        Private db As New PortalNoticiasBDEntities
 
         ' GET: /Admin/Admin/
         Function Index() As ActionResult
